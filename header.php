@@ -44,14 +44,17 @@
 	
 	//if (location.search.substring(1).length) {
 	//if (jQuery.cookie("googy").length) {
-	if (query.length) {
+	//if (query.length) {
+	if (query) {
 		//var search_arr = location.search.substring(1).split("&");
 		//var search_arr = jQuery.cookie("googy").split("&");
 		var search_arr = query.split("&");
 		for (var item in search_arr) {
-			if (search_arr[item].length) { // lose this question if you want to send empty parameters
+			//if (search_arr[item].length) {
+			if (search_arr[item]) { // lose this question if you want to send empty parameters
 				var item_arr = search_arr[item].split("=");
-				if (item_arr[1].length) {
+				//if (item_arr[1].length) {
+				if (item_arr[1]) {
                 parameters[item_arr[0]] = item_arr[1];
 				}
 			}
