@@ -14,14 +14,14 @@
 		$_SESSION['googy'] =  $_SERVER["QUERY_STRING"]; 
 	}
 	
-	if (isset ($_SESSION['googy']) )
-		$goo .= $_SESSION['googy'];
+	/*if (isset ($_SESSION['googy']) )
+		$goo .= $_SESSION['googy'];*/
 	
 	?>
 	
 	// show once
 	//var query = location.search.substring(1);
-	var query = '<?php echo $goo; ?>';
+	var query = '<?php if(!empty($_SESSION['googy'])) { echo $_SESSION['googy']; } ?>';
 	query = query.replace(/%20/g," ");
 	query = query.replace(/%21/g,"!");
 	query = query.replace(/%22/g,'"');
